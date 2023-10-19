@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&family=Montserrat:wght@200;300;400;500;600&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+/* base css start */
+* {
+  margin: 0;
+}
+body {
+  font-family: "Electrolize", sans-serif;
+}
+.container {
+  background-color: #000;
+  color: #fff;
+}
+/*  */
+.navbar {
+  background-color: #000;
+  height: 60px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.navbar_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 50px;
+}
+.logo {
+  color: rgb(255, 70, 70);
+  font-size: 30px;
+}
+.menu_list {
+  display: flex;
+  list-style: none;
+  column-gap: 30px;
+  padding: 0;
+}
+.menu_list_item {
+  cursor: pointer;
+}
+.menu_list_item:hover {
+  font-weight: bold;
+}
+.menu_list_item.active {
+  font-weight: bold;
+}
+.profile_container {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.profile_p {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile_text_container {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  line-height: 1;
+}
+.toggle {
+  width: 40px;
+  background-color: #fff;
+  height: 20px;
+  position: relative;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.toggle_icon {
+  color: goldenrod;
+}
+.toggle_ball {
+  width: 18px;
+  height: 18px;
+  background-color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  transition: 0.5s ease all;
+}
+/* NarBar End */
+
+/* SideBar Start */
+.sidebar {
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  row-gap: 40px;
+  position: fixed;
+}
+.sidebar i {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* SideBar End */
+
+/* featured start */
+.content_wrapper {
+  margin-left: 50px;
+}
+.featured_content {
+  background: url(img/spiderman.jpg);
+  padding: 50px;
+  height: calc(100vh - 160px);
+  background-size: 100% 100%;
+}
+.featured_title {
+  width: 400px;
+}
+.featured_desc {
+  width: 500px;
+  background-color: rgb(255, 255, 255, 0.5);
+  padding: 10px;
+  margin: 30px 0;
+  color: #000;
+}
+.featured_buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.featured_buttons button {
+  padding: 10px 25px;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  column-gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.info_button {
+  background-color: rgb(145, 142, 142, 0.5);
+  color: #fff;
+}
+/* featured end */
+/* filter start */
+.movie_list_filter {
+  margin: 20px 0 20px 50px;
+  padding: 20px;
+}
+.movie_list_filter select {
+  background-color: #000;
+  color: #fff;
+  padding: 7px 0;
+  width: 125px;
+}
+/* filter end */
+
+/* movie list start */
+.movie_list_container {
+  margin-left: 70px;
+}
+.movie_list {
+  list-style: none;
+  padding: 0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  transform: translateX(0);
+  transition: 1s all ease-in-out;
+}
+.movie_list_wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.movie_item {
+  position: relative;
+}
+.movie_item:hover .movie_item_title,
+.movie_item:hover .movie_item_buttons {
+  opacity: 1;
+}
+.movie_item:hover .movie_item_img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: 0.5;
+}
+.movie_item_img {
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  transition: 1s all ease;
+}
+.movie_item_title {
+  background-color: rgb(40, 40, 40, 0.4);
+  padding: 0 10px;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.movie_item_buttons {
+  background-color: rgb(40, 40, 40, 0.4);
+  padding: 10px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10%;
+  left: 50px;
+  display: flex;
+  column-gap: 20px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+.movie_item_buttons i {
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 20px;
+  transition: 0.5s all ease;
+}
+.movie_item_buttons i:hover {
+  opacity: 1;
+}
+.arrow {
+  width: 100px;
+  display: flex;
+  font-size: 120px;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  opacity: 0.5;
+  transition: 0.5s ease all;
+  cursor: pointer;
+}
+.arrow :hover {
+  opacity: 1;
+}
+/* movie list end */
+/* Dark Mod Start */
+.container.active {
+  background-color: #fff;
+}
+.navbar.active {
+  background-color: #fff;
+  color: #000;
+}
+.sidebar.active {
+  background-color: #fff;
+}
+.sidebar i.active {
+  color: #000;
+}
+.movie_list_title.active {
+  color: #000;
+}
+.toggle.active {
+  background-color: #000;
+}
+.toggle_ball.active {
+  background-color: #fff;
+  transform: translateX(-20px);
+}
+.movie_list_filter select.active {
+  background-color: #fff;
+  color: #000;
+}
+/* Dark Mod End */
+
+/* responsive start */
+@media only screen and (max-width: 800px) {
+  .menu_container {
+    display: none;
+  }
+  .featured_content {
+    height: 50vh;
+  }
+  .featured_title {
+    width: 200px;
+  }
+  .featured_desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    max-width: 200px;
+    padding: 0;
+  }
+}
+/* responsive end */
